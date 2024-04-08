@@ -4,7 +4,21 @@
 */
 
 function isPalindrome(str) {
+  str = str.toLowerCase();
+  let i = 0;
+  let j = str.length-1;
+  let puncstr = ",.?!-\\"
+  while(i<j){
+    if(str[i]==" " || str[j]==" "|| puncstr.includes(str[i]) || puncstr.includes(str[j])){
+      return true;
+    }
+    if(str[i]!=str[j]){
+    return false
+    }
+    i++;
+    j--;
+  }
   return true;
 }
-
+console.log(isPalindrome('Able, was I ere I saw Elba!'))
 module.exports = isPalindrome;
